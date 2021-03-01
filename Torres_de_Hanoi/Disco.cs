@@ -9,7 +9,7 @@ namespace Torres_de_Hanoi
     class Disco
     {
 
-        public int valor { get => this.valor; set => this.valor = value; }
+        public int valor { get; set; }
 
         public Disco(int v)
         {
