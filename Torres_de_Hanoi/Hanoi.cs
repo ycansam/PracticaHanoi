@@ -50,7 +50,32 @@ namespace Torres_de_Hanoi
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
         {
-            return 0;
+            int contador = 0;
+            //si no es par ejecuta el codigo
+            if(n%2 != 0)
+            {
+                while(fin.Size != n)
+                {
+                    mover_disco(ini, fin);
+                    contador++;
+                    mover_disco(ini, aux);
+                    contador++;
+                    mover_disco(aux, fin);
+                    contador++;
+                }
+            }//si lo es ejecuta el siguiente
+            else
+            {
+                while(fin.Size != n)
+                {
+                    mover_disco(ini, aux);
+                    contador++;
+                    mover_disco(ini, fin);
+                    contador++;
+                    mover_disco(aux, fin);
+                }
+            }
+            return contador;
         }
 
     }
