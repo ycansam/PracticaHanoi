@@ -1,0 +1,7 @@
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe.config
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.exe
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\bin\Debug\Torres_de_Hanoi.pdb
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csprojAssemblyReference.cache
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.csproj.CoreCompileInputs.cache
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.exe
+D:\Documentos\Practicas Matematicas\PracticaHanoi\Torres_de_Hanoi\obj\Debug\Torres_de_Hanoi.pdb
