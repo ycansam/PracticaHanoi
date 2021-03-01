@@ -19,16 +19,26 @@ namespace Torres_de_Hanoi
 
         public void push(Disco d)
         {
+            //si el disco existe no se añase
             if (!this.Elementos.Contains(d))
             {
                 this.Elementos.Add(d);
-                this.Size++;
+                this.Size = Elementos.Count();
                 this.Top = Elementos.ElementAt(Elementos.Count());
             }
         }
         public Disco pop()
         {
-            return this.Top;
+            //cogemos el ultimo disco de la pila
+            Disco DiscoTop = Elementos.ElementAt(Elementos.Count());
+            //removemos el ultimo disco
+            Elementos.RemoveAt(Elementos.Count());
+            //ponemos el nuevo ultimo disco y restablecemos el tamaño
+            this.Size = Elementos.Count();
+            this.Top = Elementos.ElementAt(Elementos.Count());
+
+            //devolvemos el disco recogido
+            return DiscoTop;
         }                
 
         public bool isEmpty()
