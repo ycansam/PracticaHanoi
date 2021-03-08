@@ -9,50 +9,44 @@ namespace Torres_de_Hanoi
     class Pila
     {
         public int Size { get; set; }
-        public Disco Top { get =>this.Top; set => this.Top = value; }
+        public Disco Top { get; set; }
         public List<Disco> Elementos { get; set; }
 
         public Pila()
         {
             this.Size = 0;
+            Elementos = new List<Disco>();
         }
 
         public void push(Disco d)
         {
-            if(Elementos != null)
-            {
                 if (!this.Elementos.Contains(d))
                 {
+                    Console.WriteLine("añadiendo"+  d.valor.ToString()) ;
                     this.Elementos.Add(d);
-                    this.Size = Elementos.Count();
-                    this.Top = Elementos.ElementAt(Elementos.Count());
-                }
+                    this.Size++;
+                    this.Top = d;
+
+
             }
-            //si el disco existe no se añase
-           
+            //si el disco existe no se añase  
         }
         public Disco pop()
         {
-            if(Elementos!= null)
-            {
-                //cogemos el ultimo disco de la pila
-                Disco DiscoTop = Elementos.ElementAt(Elementos.Count());
+                Disco DiscoTop = new Disco();
+            //cogemos el ultimo disco de la pila
+                DiscoTop = Elementos.ElementAt(Elementos.Count()-1);
                 //removemos el ultimo disco
-                Elementos.RemoveAt(Elementos.Count());
-                //ponemos el nuevo ultimo disco y restablecemos el tamaño
-                this.Size = Elementos.Count();
-                this.Top = Elementos.ElementAt(Elementos.Count());
-
-                //devolvemos el disco recogido
-                return DiscoTop;
-            }
-
-            return null;
+                Elementos.RemoveAt(Elementos.Count()-1);
+            //ponemos el nuevo ultimo disco y restablecemos el tamaño
+            this.Size--;
+            //devolvemos el disco recogido
+            return DiscoTop;
         }                
 
         public bool isEmpty()
         {
-            if(Elementos == null)
+            if(Elementos.Count() == 0)
             {
                 return true;
             }

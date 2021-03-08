@@ -13,21 +13,43 @@ namespace Torres_de_Hanoi
             //si la pila b esta vacia mueve el disco top de A a la B
             if (b.isEmpty())
             {
-               Disco discoA = a.pop();  
+                Disco discoA = new Disco();
+               discoA = a.pop();     
                b.push(discoA);
-            }
-            else
+            }else if (a.isEmpty())
             {
-                //si no esta vacia, coje los dos discos top y los compara
-                Disco discoTopA = a.Top;
-                Disco discoTopB = b.Top;
+                Disco discoB = b.pop();
+                a.push(discoB);
+            }
+            else if(a.Top.valor < b.Top.valor)
+            {
+                //si no esta vacia, coje los dos discos top y los 
+                Disco discoTopA = new Disco();
+                Disco discoTopB = new Disco();
+
+                discoTopB = b.Top;
+                discoTopA = a.Top;
+
                 //si el valor de discoA es menor que el discoB se añade a la pila B.
                 if(discoTopA.valor < discoTopB.valor)
                 {
                     b.push(a.pop());
                 }
-            } 
+            }else if(a.Top.valor > b.Top.valor)
+            {
+                //si no esta vacia, coje los dos discos top y los compara
+                Disco discoTopA = new Disco();
+                Disco discoTopB = new Disco();
 
+                discoTopA = a.Top;
+                discoTopB = b.Top;
+                //si el valor de discoA es menor que el discoB se añade a la pila B.
+                if (discoTopB.valor < discoTopA.valor)
+                {
+                    a.push(b.pop());
+                }
+            }
+            /*
             if (a.isEmpty())
             {
                 Disco discoB = b.pop();
@@ -36,15 +58,18 @@ namespace Torres_de_Hanoi
             else
             {
                 //si no esta vacia, coje los dos discos top y los compara
-                Disco discoTopA = a.Top;
-                Disco discoTopB = b.Top;
+                Disco discoTopA = new Disco();
+                Disco discoTopB = new Disco();
+
+                discoTopA = a.Top;
+                discoTopB = b.Top;
                 //si el valor de discoA es menor que el discoB se añade a la pila B.
                 if (discoTopB.valor < discoTopA.valor)
                 {
                     a.push(b.pop());
                 }
             }
-
+            */
 
         }
 
@@ -56,12 +81,38 @@ namespace Torres_de_Hanoi
             {
                 while(fin.Size != n)
                 {
+                    Console.WriteLine("numero Fin.Size =====>" + fin.Size);
+                    if (fin.Size == n)
+                    {
+                        return contador;
+                    }
                     mover_disco(ini, fin);
                     contador++;
+                    Console.WriteLine(contador);
+                    Console.WriteLine("numero Fin.Size =====>" + fin.Size);
+                    if (fin.Size == n)
+                    {
+                        return contador;
+                    }
+
                     mover_disco(ini, aux);
                     contador++;
+                    Console.WriteLine(contador);
+                    Console.WriteLine("numero Fin.Size =====>" + fin.Size);
+                    if (fin.Size == n)
+                    {
+                        return contador;
+                    }
+
                     mover_disco(aux, fin);
                     contador++;
+                    Console.WriteLine(contador);
+                    Console.WriteLine("numero n =====>" + n);
+                    if (fin.Size == n)
+                    {
+                        return contador;
+                    }
+
                 }
             }//si lo es ejecuta el siguiente
             else
