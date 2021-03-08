@@ -82,13 +82,10 @@ namespace Torres_de_Hanoi
                 while(fin.Size != n)
                 {
                     Console.WriteLine("numero Fin.Size =====>" + fin.Size);
-                    if (fin.Size == n)
-                    {
-                        return contador;
-                    }
+                    if (fin.Size == n) return contador;
                     mover_disco(ini, fin);
                     contador++;
-                    Console.WriteLine(contador);
+                    Console.WriteLine("contador: " + contador);
                     Console.WriteLine("numero Fin.Size =====>" + fin.Size);
                     if (fin.Size == n)
                     {
@@ -97,7 +94,7 @@ namespace Torres_de_Hanoi
 
                     mover_disco(ini, aux);
                     contador++;
-                    Console.WriteLine(contador);
+                    Console.WriteLine("contador: " + contador);
                     Console.WriteLine("numero Fin.Size =====>" + fin.Size);
                     if (fin.Size == n)
                     {
@@ -106,7 +103,7 @@ namespace Torres_de_Hanoi
 
                     mover_disco(aux, fin);
                     contador++;
-                    Console.WriteLine(contador);
+                    Console.WriteLine("contador: " + contador);
                     Console.WriteLine("numero n =====>" + n);
                     if (fin.Size == n)
                     {
@@ -119,11 +116,20 @@ namespace Torres_de_Hanoi
             {
                 while(fin.Size != n)
                 {
+                    if (fin.Size == n) return contador;
                     mover_disco(ini, aux);
                     contador++;
+                    Console.WriteLine("contador: "+contador);
+                    Console.WriteLine("numero Fin.Size =====>" + fin.Size);
+                    if (fin.Size == n) return contador;
                     mover_disco(ini, fin);
                     contador++;
+                    Console.WriteLine("contador: " + contador);
+                    Console.WriteLine("numero Fin.Size =====>" + fin.Size);
+                    if (fin.Size == n) return contador;
                     mover_disco(aux, fin);
+                    Console.WriteLine("contador: " + contador);
+                    Console.WriteLine("numero Fin.Size =====>" + fin.Size);
                 }
             }
             return contador;
