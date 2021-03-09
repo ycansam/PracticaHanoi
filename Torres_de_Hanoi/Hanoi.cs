@@ -8,7 +8,6 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
-       public static  bool move;
         public void mover_disco(Pila a, Pila b)
         {
             //si la pila b esta vacia mueve el disco top de A a la B
@@ -100,20 +99,37 @@ namespace Torres_de_Hanoi
             {
                 if (b.isEmpty())
                 {
+                    
                     b.push(a.pop());
+                    Console.WriteLine("moviendo disco de a a b VACIO");
+                    Console.WriteLine(a.Size + "Cantidad elementos de a");
+                    Console.WriteLine(b.Size + "Cantidad elementos de b");
                     return;
                 }
-
+                if (a.isEmpty())
+                {
+                    a.push(b.pop());
+                    Console.WriteLine("moviendo disco de b a a VACIO");
+                    Console.WriteLine(a.Size + "Cantidad elementos de a");
+                    Console.WriteLine(b.Size + "Cantidad elementos de b");
+                    return;
+                }
                 if (!b.isEmpty() && !a.isEmpty())
                 {
                     if (a.Top.valor < b.Top.valor)
                     {
                         b.push(a.pop());
+                        Console.WriteLine("moviendo disco de a a b");
+                        Console.WriteLine(a.Size + "Cantidad elementos de a");
+                        Console.WriteLine(b.Size + "Cantidad elementos de b");
                         return;
                     }
                     else if (b.Top.valor < a.Top.valor)
                     {
                         a.push(b.pop());
+                        Console.WriteLine("moviendo disco de b a a");
+                        Console.WriteLine(a.Size + "Cantidad elementos de a");
+                        Console.WriteLine(b.Size + "Cantidad elementos de b");
                         return;
                     }
                     else
@@ -121,13 +137,7 @@ namespace Torres_de_Hanoi
                         return;
                     }
                 }
-
                 
-                if (a.isEmpty() )
-                {
-                    a.push(b.pop());
-                    return;
-                }
             }
         }
 
@@ -142,24 +152,14 @@ namespace Torres_de_Hanoi
                     if (fin.Size == n) return contador;
                     mover_disco(ini, fin);
                     contador++;
-                    if (fin.Size == n)
-                    {
-                        return contador;
-                    }
-
+                    if (fin.Size == n) return contador;
                     mover_disco(ini, aux);
                     contador++;
-                    if (fin.Size == n)
-                    {
-                        return contador;
-                    }
+                    if (fin.Size == n) return contador;
 
                     mover_disco(aux, fin);
                     contador++;
-                    if (fin.Size == n)
-                    {
-                        return contador;
-                    }
+                    if (fin.Size == n) return contador;
 
                 }
             }//si lo es ejecuta el siguiente
@@ -170,16 +170,13 @@ namespace Torres_de_Hanoi
                     if (fin.Size == n) return contador;
                     mover_disco(ini, aux);
                     contador++;
-                    //Console.WriteLine("contador: "+contador);
-                    //Console.WriteLine("numero Fin.Size =====>" + fin.Size);
                     if (fin.Size == n) return contador;
                     mover_disco(ini, fin);
                     contador++;
-                   // Console.WriteLine("contador: " + contador);
-                   // Console.WriteLine("numero Fin.Size =====>" + fin.Size);
                     if (fin.Size == n) return contador;
                     mover_disco(aux, fin);
-                   // Console.WriteLine("contador: " + contador);
+                    contador++;
+                    if (fin.Size == n) return contador;
                 }
             }
             return contador;
