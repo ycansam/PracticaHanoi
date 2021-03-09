@@ -15,42 +15,45 @@ namespace Torres_de_Hanoi
             Pila ini = new Pila();
             Pila aux = new Pila();
             Pila fin = new Pila();
-            /*
-            Disco A = new Disco(1);
-            Disco B = new Disco(2);
-            Disco C = new Disco(3);
-
-            ini.push(C);
-            ini.push(B);
-            ini.push(A);
-            
-            Hanoi hanoi = new Hanoi();
-            int num = hanoi.iterativo(3, ini, fin, aux);
-            Console.WriteLine(num);
-            // Keep the console window open in debug mode.
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
-            */
-            //forma no automatica
-
-            int numDiscos = Convert.ToInt32(Console.ReadLine());
-            //Console.ReadKey();
-            List<Disco> l_discos = new List<Disco>();
-            for(int i = numDiscos; i > 0 ; i--)
+            int number;
+            bool success = Int32.TryParse(Console.ReadLine(), out number);
+            if (success)
             {
-                ini.push(new Disco(i));
-                l_discos.Add(new Disco(i));
-                Console.Write(l_discos.ElementAt(numDiscos-i).valor);
-            }
-           
-           
-            Console.ReadKey();
-            
-            Hanoi hanoiManual = new Hanoi();
-            int numMan = hanoiManual.iterativo(numDiscos, ini, fin, aux);
-            Console.WriteLine("El resultado es: "+ numMan);
-            Console.ReadKey();
+                int numDiscos = number;
 
+                if (numDiscos == 0)
+                {
+                    Console.Write("El resultado es: 0");
+                }
+                else
+                {
+                    List<Disco> l_discos = new List<Disco>();
+                    for (int i = numDiscos; i > 0; i--)
+                    {
+                        ini.push(new Disco(i));
+                        l_discos.Add(new Disco(i));
+                    }
+
+                    Hanoi hanoiManual = new Hanoi();
+                    int numMan = hanoiManual.iterativo(numDiscos, ini, fin, aux);
+                    Console.WriteLine("El resultado es: " + numMan);
+                    int res = 1;
+                    for(int i =0;i<numDiscos; i++)
+                    {
+                        res = 2 * res;
+                    }
+                    res = res - 1;
+
+                    Console.WriteLine("El resultado con operaciones es: " +res);
+
+                    Console.ReadKey();
+                }
+            }
+            else
+            {
+                Console.WriteLine("El valor introducido no es un numero ");
+                Console.ReadKey();
+            }
         }
 
     }

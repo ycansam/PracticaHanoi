@@ -22,7 +22,6 @@ namespace Torres_de_Hanoi
         {
                 if (!this.Elementos.Contains(d))
                 {
-                    Console.WriteLine("añadiendo"+  d.valor.ToString()) ;
                     this.Elementos.Add(d);
                     this.Size++;
                     this.Top = d;
