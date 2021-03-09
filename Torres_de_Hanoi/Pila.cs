@@ -31,14 +31,14 @@ namespace Torres_de_Hanoi
         }
         public Disco pop()
         {
-                Disco DiscoTop = new Disco();
+            Disco DiscoTop = new Disco();
             //cogemos el ultimo disco de la pila
-                DiscoTop = Elementos.ElementAt(Elementos.Count()-1);
-                //removemos el ultimo disco
-                Elementos.RemoveAt(Elementos.Count()-1);
+            DiscoTop = Elementos.ElementAt(Elementos.Count()-1);
+            //removemos el ultimo disco
+            Elementos.RemoveAt(Elementos.Count()-1);
             //ponemos el nuevo ultimo disco y restablecemos el tamaño
             this.Size--;
-            if(Elementos.Count() != 0)
+            if(Elementos.Count() > 0)
             {
                 this.Top = Elementos.ElementAt(Elementos.Count() - 1);
             }
