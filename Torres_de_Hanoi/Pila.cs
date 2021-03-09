@@ -26,8 +26,6 @@ namespace Torres_de_Hanoi
                     this.Elementos.Add(d);
                     this.Size++;
                     this.Top = d;
-
-
             }
             //si el disco existe no se añase  
         }
@@ -40,6 +38,11 @@ namespace Torres_de_Hanoi
                 Elementos.RemoveAt(Elementos.Count()-1);
             //ponemos el nuevo ultimo disco y restablecemos el tamaño
             this.Size--;
+            if(Elementos.Count() != 0)
+            {
+                this.Top = Elementos.ElementAt(Elementos.Count() - 1);
+            }
+            
             //devolvemos el disco recogido
             return DiscoTop;
         }                
