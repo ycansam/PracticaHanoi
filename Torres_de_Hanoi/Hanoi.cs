@@ -69,10 +69,6 @@ namespace Torres_de_Hanoi
                     mover_disco(ini, aux);
                     contador++;
                     if (fin.Size == n) return contador;
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
                     mover_disco(aux, fin);
                     contador++;
                     if (fin.Size == n) return contador;
