@@ -93,6 +93,24 @@ namespace Torres_de_Hanoi
             }
             return contador;
         }
+        int CountRecursivo = 0;
+        public int recursivo(int n, Pila ini, Pila fin, Pila aux)
+        {
+            if(n == 1)
+            {
+                mover_disco(ini, fin);
+                CountRecursivo++;
+            }
+            else
+            {
+                recursivo(n - 1, ini, aux, fin);
+                CountRecursivo++;
+                recursivo(n - 1, aux, fin, ini);
+            }
+
+
+            return CountRecursivo;
+        }
 
     }
 }
