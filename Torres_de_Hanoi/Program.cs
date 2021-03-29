@@ -24,13 +24,17 @@ namespace Torres_de_Hanoi
                 if (numDiscos == 0)
                 {
                     Console.Write("El resultado es: 0");
-                }else if(numDiscos < 0)
+                    Console.ReadKey();
+                }
+                else if(numDiscos < 0)
                 {
                     Console.Write("No se puede obtener un resultado, introduzca un numero de discos valido.");
+                    Console.ReadKey();
                 }
                 else
                 {
                     List<Disco> l_discos = new List<Disco>();
+                    
                     for (int i = numDiscos; i > 0; i--)
                     {
                         ini.push(new Disco(i));
