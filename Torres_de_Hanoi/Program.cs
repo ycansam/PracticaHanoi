@@ -8,8 +8,6 @@ namespace Torres_de_Hanoi
 {
     class Program
     {
-       
-
         static void Main(string[] args)
         {
             Pila ini = new Pila();
@@ -18,6 +16,7 @@ namespace Torres_de_Hanoi
             int number;
 
             Console.Write("Introduce numero de discos"+Environment.NewLine);
+
             bool success = Int32.TryParse(Console.ReadLine(), out number);
             if (success)
             {
